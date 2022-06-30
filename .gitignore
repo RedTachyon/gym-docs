@@ -1,6 +1,4 @@
-.DS_Store
-_site
-.jekyll-cache
-__pycache__
-build/
-.vscode/
+_build
+
+# Local Netlify folder
+.netlify
