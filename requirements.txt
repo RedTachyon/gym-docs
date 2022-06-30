@@ -1,4 +1,4 @@
 sphinx
 myst-parser
 furo
-gym
+gym==0.23.1
