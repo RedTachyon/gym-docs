@@ -2,6 +2,10 @@
 layout: "contents"
 title: Environment Creation
 ---
+# Irrelevant - web dev stuff
+
+This is how you make versioned documentation
+
 # Environment Creation
 
 This documentation overviews creating new environments and relevant useful wrappers, utilities and tests included in Gym designed for the creation of new environments.
