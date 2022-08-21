@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Box2D" href="../../box2d/" /><link rel="prev" title="Mountain Car" href="../mountain_car/" />
         <link rel="canonical" href="https://www.gymlibrary.ml/environments/classic_control/pendulum.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
         <title>Pendulum - Gym Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
@@ -36,7 +36,14 @@
       }
     }
   }
-</style></head>
+</style>
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'G-JGXSLW7N06']);
+    _gaq.push(['_trackPageview']);
+</script>
+</head>
   <body>
     
     <script>
@@ -423,9 +430,9 @@ while the maximum reward is zero (pendulum is upright with zero velocity and no 
 <h2>Starting State<a class="headerlink" href="#starting-state" title="Permalink to this heading">#</a></h2>
 <p>The starting state is a random angle in <em>[-pi, pi]</em> and a random angular velocity in <em>[-1,1]</em>.</p>
 </section>
-<section id="episode-termination">
-<h2>Episode Termination<a class="headerlink" href="#episode-termination" title="Permalink to this heading">#</a></h2>
-<p>The episode terminates at 200 time steps.</p>
+<section id="episode-truncation">
+<h2>Episode Truncation<a class="headerlink" href="#episode-truncation" title="Permalink to this heading">#</a></h2>
+<p>The episode truncates at 200 time steps.</p>
 </section>
 <section id="arguments">
 <h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading">#</a></h2>
@@ -451,17 +458,9 @@ The default value is g = 10.0 .</p></li>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../box2d/">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Box2D</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
+          
           <a class="prev-page" href="../mountain_car/">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -497,7 +496,7 @@ The default value is g = 10.0 .</p></li>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -509,7 +508,7 @@ The default value is g = 10.0 .</p></li>
 <li><a class="reference internal" href="#observation-space">Observation Space</a></li>
 <li><a class="reference internal" href="#rewards">Rewards</a></li>
 <li><a class="reference internal" href="#starting-state">Starting State</a></li>
-<li><a class="reference internal" href="#episode-termination">Episode Termination</a></li>
+<li><a class="reference internal" href="#episode-truncation">Episode Truncation</a></li>
 <li><a class="reference internal" href="#arguments">Arguments</a></li>
 <li><a class="reference internal" href="#version-history">Version History</a></li>
 </ul>
@@ -529,5 +528,41 @@ The default value is g = 10.0 .</p></li>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
-    </body>
+    
+
+<script>
+    (() => {
+        if (!localStorage.getItem("shownCookieAlert")) {
+            const boxElem = document.createElement("div");
+            boxElem.classList.add("cookie_alert");
+            const containerElem = document.createElement("div");
+            containerElem.classList.add("cookie_container");
+            const textElem = document.createElement("p");
+            textElem.innerHTML = `This page uses <a href="https://analytics.google.com/">
+                                Google Analytics</a> to collect statistics. You can disable it by blocking
+                                the JavaScript coming from www.google-analytics.com.`;
+                                containerElem.appendChild(textElem);
+            const closeBtn = document.createElement("button");
+            closeBtn.innerHTML = `<?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/></g></svg>`
+            closeBtn.onclick = () => {
+                localStorage.setItem("shownCookieAlert", "true");
+                boxElem.style.display = "none";
+            }
+            containerElem.appendChild(closeBtn);
+            boxElem.appendChild(containerElem);
+            document.body.appendChild(boxElem);
+        }
+    })()
+
+</script>
+
+<script>
+    (function () {
+        var ga = document.createElement('script');
+        ga.src = ('https:' == document.location.protocol ?
+            'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        ga.setAttribute('async', 'true');
+        document.documentElement.firstChild.appendChild(ga);
+    })();
+</script></body>
 </html>

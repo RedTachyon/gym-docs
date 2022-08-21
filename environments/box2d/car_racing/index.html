@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Lunar Lander" href="../lunar_lander/" /><link rel="prev" title="Bipedal Walker" href="../bipedal_walker/" />
         <link rel="canonical" href="https://www.gymlibrary.ml/environments/box2d/car_racing.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
         <title>Car Racing - Gym Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
@@ -36,7 +36,14 @@
       }
     }
   }
-</style></head>
+</style>
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'G-JGXSLW7N06']);
+    _gaq.push(['_trackPageview']);
+</script>
+</head>
   <body>
     
     <script>
@@ -335,7 +342,7 @@
 <td><p>0</p></td>
 </tr>
 <tr class="row-even"><td><p>Import</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">gym.make(&quot;CarRacing-v1&quot;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gym.make(&quot;CarRacing-v2&quot;)</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -356,8 +363,10 @@ and turn at the same time.</p>
 </section>
 <section id="action-space">
 <h2>Action Space<a class="headerlink" href="#action-space" title="Permalink to this heading">#</a></h2>
-<p>There are 3 actions: steering (-1 is full left, +1 is full right), gas,
-and breaking.</p>
+<p>If continuous:
+There are 3 actions: steering (-1 is full left, +1 is full right), gas, and breaking.
+If discrete:
+There are 5 actions: do nothing, steer left, steer right, gas, brake.</p>
 </section>
 <section id="observation-space">
 <h2>Observation Space<a class="headerlink" href="#observation-space" title="Permalink to this heading">#</a></h2>
@@ -388,6 +397,25 @@ the agent before a lap is considered complete.</p>
 In this scenario, the background and track colours are different on every reset.</p>
 <p>Passing <code class="docutils literal notranslate"><span class="pre">continuous=False</span></code> converts the environment to use discrete action space.
 The discrete action space has 5 actions: [do nothing, left, right, gas, brake].</p>
+</section>
+<section id="reset-arguments">
+<h2>Reset Arguments<a class="headerlink" href="#reset-arguments" title="Permalink to this heading">#</a></h2>
+<p>Passing the option <code class="docutils literal notranslate"><span class="pre">options[&quot;randomize&quot;]</span> <span class="pre">=</span> <span class="pre">True</span></code> will change the current colour of the environment on demand.
+Correspondingly, passing the option <code class="docutils literal notranslate"><span class="pre">options[&quot;randomize&quot;]</span> <span class="pre">=</span> <span class="pre">False</span></code> will not change the current colour of the environment.
+<code class="docutils literal notranslate"><span class="pre">domain_randomize</span></code> must be <code class="docutils literal notranslate"><span class="pre">True</span></code> on init for this argument to work.
+Example usage:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CarRacing-v1&quot;</span><span class="p">,</span> <span class="n">domain_randomize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># normal reset, this changes the colour scheme by default</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+    <span class="c1"># reset with colour scheme change</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;randomize&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+    <span class="c1"># reset with no colour scheme change</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;randomize&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+</pre></div>
+</div>
 </section>
 <section id="version-history">
 <h2>Version History<a class="headerlink" href="#version-history" title="Permalink to this heading">#</a></h2>
@@ -420,10 +448,10 @@ The discrete action space has 5 actions: [do nothing, left, right, gas, brake].<
                 </div>
                 <div class="title">Lunar Lander</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="../bipedal_walker/">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -459,7 +487,7 @@ The discrete action space has 5 actions: [do nothing, left, right, gas, brake].<
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -473,6 +501,7 @@ The discrete action space has 5 actions: [do nothing, left, right, gas, brake].<
 <li><a class="reference internal" href="#starting-state">Starting State</a></li>
 <li><a class="reference internal" href="#episode-termination">Episode Termination</a></li>
 <li><a class="reference internal" href="#arguments">Arguments</a></li>
+<li><a class="reference internal" href="#reset-arguments">Reset Arguments</a></li>
 <li><a class="reference internal" href="#version-history">Version History</a></li>
 <li><a class="reference internal" href="#references">References</a></li>
 <li><a class="reference internal" href="#credits">Credits</a></li>
@@ -493,5 +522,41 @@ The discrete action space has 5 actions: [do nothing, left, right, gas, brake].<
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
-    </body>
+    
+
+<script>
+    (() => {
+        if (!localStorage.getItem("shownCookieAlert")) {
+            const boxElem = document.createElement("div");
+            boxElem.classList.add("cookie_alert");
+            const containerElem = document.createElement("div");
+            containerElem.classList.add("cookie_container");
+            const textElem = document.createElement("p");
+            textElem.innerHTML = `This page uses <a href="https://analytics.google.com/">
+                                Google Analytics</a> to collect statistics. You can disable it by blocking
+                                the JavaScript coming from www.google-analytics.com.`;
+                                containerElem.appendChild(textElem);
+            const closeBtn = document.createElement("button");
+            closeBtn.innerHTML = `<?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/></g></svg>`
+            closeBtn.onclick = () => {
+                localStorage.setItem("shownCookieAlert", "true");
+                boxElem.style.display = "none";
+            }
+            containerElem.appendChild(closeBtn);
+            boxElem.appendChild(containerElem);
+            document.body.appendChild(boxElem);
+        }
+    })()
+
+</script>
+
+<script>
+    (function () {
+        var ga = document.createElement('script');
+        ga.src = ('https:' == document.location.protocol ?
+            'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        ga.setAttribute('async', 'true');
+        document.documentElement.firstChild.appendChild(ga);
+    })();
+</script></body>
 </html>
